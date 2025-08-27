@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Front-end snacks, epistle 3</title>
+
+		<template id="topicSectionTemplate">
+			<style>
+				h2,
+				a.can-i-use {
+					align-self: center;
+				}
+
+				.topic-references {
+					margin-block-start: 1rem;
+				}
+
+				a.can-i-use {
+					text-decoration: wavy underline;
+					margin-block-end: 0.5rem;
+				}
+			</style>
+			<section>
+				<h2>Topic title</h2>
+				<a href="#" class="can-i-use">Can I use it?</a>
+				<slot>Topic content slot</slot>
+				<div class="topic-references">
+					<h3>References</h3>
+					<slot name="topic-references"><p>No references</p></slot>
+				</div>
+			</section>
+		</template>
+	</head>
+	<body>
+		<div id="app">
+			<header>
+				<h1>Front-end snacks, epistle 3</h1>
+			</header>
+			<main>
+				<section>
+					<details id="tldr">
+						<summary>
+							<h2>TLDR;</h2>
+						</summary>
+						<ul>
+							<li>@scope</li>
+						</ul>
+					</details>
+				</section>
+
+				<topic-section topic-title="CSS @scope" can-i-use-href="https://caniuse.com/css-cascade-scope">
+					<p>CSS @scope</p>
+					<ul slot="topic-references">
+						<li>
+							<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@scope">MDN: @scope</a>
+						</li>
+					</ul>
+				</topic-section>
+
+				<div id="my-component-container"></div>
+				<script>
+					class MyComponent extends HTMLElement {
+						constructor() {
+							super();
+							this.attachShadow({ mode: 'open' });
+
+							fetch('src/components/my-component/my-component.html')
+								.then((response) => response.text())
+								.then((html) => {
+									this.shadowRoot.innerHTML = html;
+
+									const linkElem = document.createElement('link');
+									linkElem.setAttribute('rel', 'stylesheet');
+									linkElem.setAttribute('href', 'src/components/my-component/my-component.css');
+									this.shadowRoot.appendChild(linkElem);
+								});
+						}
+					}
+					customElements.define('my-component', MyComponent);
+
+					document.getElementById('my-component-container').innerHTML = '<my-component></my-component>';
+				</script>
+			</main>
+		</div>
+		<script type="module" src="/src/main.js"></script>
+	</body>
+</html>
