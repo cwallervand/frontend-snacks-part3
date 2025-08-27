@@ -1,4 +1,8 @@
 @layer reset, base, layout, components;
+@import url('./components/qAndACard/qAndACard.css');
+:root {
+	--font-color: #a259f7;
+}
 
 @layer reset {
 	/* 1. Use a more-intuitive box-sizing model */
@@ -81,7 +85,7 @@
 	h2 {
 		margin-block-end: 0.7rem;
 		font-size: 1.5rem;
-		color: orangered;
+		color: var(--font-color);
 	}
 
 	details {

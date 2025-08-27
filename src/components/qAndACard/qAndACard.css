@@ -1,0 +1,21 @@
+@scope (.q-and-a-card) to (footer) {
+	:scope {
+		--font-color: #e63946;
+		border: 3px solid var(--font-color);
+		border-radius: 6px;
+		padding: 1em;
+	}
+
+	p {
+		color: lch(from var(--font-color) l c h / 90%);
+		font-size: 1.3rem;
+	}
+
+	.question {
+		font-size: 1.3rem;
+	}
+
+	.answer {
+		font-size: 1.1rem;
+	}
+}

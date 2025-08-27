@@ -1,2 +1,2 @@
 import './style.css';
-import './topicSection.js';
+import './components/topicSection/topicSection.js';
