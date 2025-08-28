@@ -69,6 +69,45 @@
 						</li>
 					</ul>
 				</topic-section>
+				<topic-section topic-title="Popover API" can-i-use-href="https://caniuse.com/?search=popover">
+					<p>
+						A popover is a small overlay that appears on top of the main content, typically used to display additional
+						information or options related to a specific element on the page. The Popover API provides a way to create
+						and manage popover elements in web applications. Popovers created using the Popover API are always
+						non-modal.
+					</p>
+					<div>
+						<button popovertarget="not-a-scam-popover">Receive 1 000 000 USD (not a scam)</button>
+						<button popovertarget="another-popover" popovertargetaction="show">Show</button>
+						<button popovertarget="another-popover" popovertargetaction="hide">Hide</button>
+						<div id="not-a-scam-popover" class="popover" popover>
+							💰💰💰 Congratulations, a big bag of money will arrive at your doorstep in the near future! All you need
+							to do is accept. 💰💰💰
+							<div>
+								<button popovertarget="not-a-scam-popover" popovertargetaction="hide">Accept</button>
+							</div>
+						</div>
+						<div id="another-popover" class="popover" popover>This popover does not have the toggle feature</div>
+					</div>
+					<br />
+					<div id="scam">
+						<button id="scam-button">Receive 1 000 000 USD (not not a scam)</button>
+						<div id="scam-popover" class="popover">👹👹👹 Thank you, do come again! 👹👹👹</div>
+					</div>
+					<ul slot="topic-references">
+						<li>
+							<a href="https://web.dev/blog/popover-baseline?hl=en">web.dev: Popover API</a>
+						</li>
+						<li>
+							<a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API">MDN: Popover API</a>
+						</li>
+						<li>
+							<a href="https://developer.mozilla.org/en-US/docs/Web/API/Popover_API/Using">
+								MDN: Using the Popover API
+							</a>
+						</li>
+					</ul>
+				</topic-section>
 			</main>
 		</div>
 		<script type="module" src="/src/main.js"></script>

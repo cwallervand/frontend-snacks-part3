@@ -100,6 +100,47 @@
 		margin-block: 0.7rem;
 		color: #252525;
 	}
+
+	button {
+		font-size: 1.1rem;
+		cursor: pointer;
+		padding: 0.5em 1em;
+		background-color: var(--font-color);
+		color: white;
+		border: 4px solid color-mix(in srgb, var(--font-color), black 20%);
+		border-radius: 15px;
+
+		&:hover {
+			background-color: color-mix(in srgb, var(--font-color), black 20%);
+		}
+
+		&:focus-visible {
+			outline: none;
+		}
+	}
+
+	.popover {
+		width: 90%;
+		max-width: 478px;
+		padding: 1em;
+		display: flex;
+		flex-direction: column;
+		align-self: center;
+		align-items: center;
+		justify-self: center;
+		background-color: color-mix(in srgb, var(--font-color), white 40%);
+		border: 4px solid color-mix(in srgb, var(--font-color), black 20%);
+		border-radius: 15px;
+		color: #fff;
+		opacity: 0;
+		transform: scale(0.8); /* Example: start smaller */
+		transition: opacity 0.1s ease-out, transform 0.1s ease-out;
+
+		&:popover-open {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
 }
 
 @layer layout {

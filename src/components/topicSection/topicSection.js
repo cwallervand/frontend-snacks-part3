@@ -11,7 +11,6 @@ function getSharedStyleSheets() {
 			return sheet;
 		});
 	}
-	console.log('getSharedStyleSheets', globalSheets);
 	return globalSheets;
 }
 
