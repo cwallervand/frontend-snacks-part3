@@ -22,10 +22,12 @@ if (isPopoverSuported()) {
 	nonScamPopover.addEventListener('beforetoggle', (event) => {
 		console.log('popover event', event);
 	});
+
+	scamButton.popoverTargetAction = 'show';
+	scamButton.addEventListener('click', () => {
+		displayPopover('scam-popover');
+		document.getElementsByTagName('body')[0].inert = true;
+	});
 } else {
 	scamWraper.style.display = 'none';
 }
-
-scamButton.addEventListener('click', () => {
-	displayPopover('scam-popover');
-});
