@@ -31,3 +31,37 @@ if (isPopoverSuported()) {
 } else {
 	scamWraper.style.display = 'none';
 }
+
+const SEARCH_HIGHLIGHT_NAME = 'search-results';
+const searchInput = document.getElementById('search-input');
+const searchContentParagraph = document.getElementById('search-content').firstChild;
+const searchableContent = searchContentParagraph.textContent;
+
+if (searchInput) {
+	searchInput.addEventListener('input', (event) => {
+		highlightText(event.target.value);
+	});
+}
+
+function highlightText(search) {
+	const ranges = [];
+
+	if (search && search.trim().length > 0) {
+		const searchRegex = new RegExp(search, 'gi');
+
+		const searchHitIndexes = [...searchableContent.matchAll(searchRegex)].map((a) => a.index);
+
+		searchHitIndexes.forEach((matchIndex) => {
+			const searchRange = new Range();
+			searchRange.setStart(searchContentParagraph, matchIndex);
+			searchRange.setEnd(searchContentParagraph, matchIndex + search.length);
+
+			ranges.push(searchRange);
+		});
+
+		console.log('### ranges ###', ranges);
+	}
+	const searchHighlight = new Highlight(...ranges);
+	// Set the CSS highlight
+	CSS.highlights.set(SEARCH_HIGHLIGHT_NAME, searchHighlight);
+}
