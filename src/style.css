@@ -1,5 +1,5 @@
 @layer reset, base, layout, components;
-@import url('./components/qAndACard/qAndACard.css');
+/* @import url('./components/qAndACard/qAndACard.css'); */
 :root {
 	--font-color: #a259f7;
 }
@@ -215,3 +215,88 @@
 		}
 	}
 }
+
+@scope (.fresh) {
+	:scope {
+		--font-color: navy;
+		--theme-color: #ff5fa2;
+		background-color: var(--theme-color);
+		color: var(--font-color);
+	}
+
+	p {
+		background-color: var(--theme-color);
+		color: var(--font-color);
+	}
+}
+
+@scope (.dark) {
+	:scope {
+		--font-color: #fff;
+		--theme-color: black;
+		background-color: var(--theme-color);
+		color: var(--font-color);
+	}
+
+	p {
+		background-color: var(--theme-color);
+		color: var(--font-color);
+	}
+}
+
+@scope (.q-and-a-card) {
+	:scope {
+		--radius: 8px;
+		border: 3px solid;
+		border-radius: var(--radius);
+		padding: 1em;
+	}
+
+	p {
+		font-size: 1.3rem;
+	}
+
+	img {
+		max-width: 500px;
+		border: 6px solid;
+		padding: 1.2em;
+		background-color: white;
+		margin-block-start: 1em;
+	}
+
+	.question {
+		font-weight: bold;
+	}
+
+	.answer {
+		font-size: 1.1rem;
+		font-style: italic;
+	}
+}
+
+@scope (figure) {
+	:scope {
+		margin-block: 1em;
+		padding: 1em;
+		border: 3px dashed;
+		border-radius: 8px;
+		display: inline-block;
+	}
+
+	img {
+		max-width: 500px;
+	}
+
+	figcaption {
+		text-align: center;
+
+		margin-block-start: 0.5em;
+		font-style: italic;
+	}
+}
+
+/* .q-and-a-card {
+	p {
+		color: red;
+	}
+} */
