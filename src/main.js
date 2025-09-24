@@ -1,6 +1,10 @@
 import './style.css';
 import './components/topicSection/topicSection.js';
 
+/***********
+ * POPOVER *
+ ***********/
+
 function isPopoverSuported() {
 	return Object.hasOwn(HTMLElement.prototype, 'popover');
 }
@@ -32,6 +36,9 @@ if (isPopoverSuported()) {
 	scamWraper.style.display = 'none';
 }
 
+/********************
+ * CUSTOM HIGHLIGHT *
+ ********************/
 const SEARCH_HIGHLIGHT_NAME = 'search-results';
 const searchInput = document.getElementById('search-input');
 const searchContentParagraph = document.getElementById('search-content').firstChild;

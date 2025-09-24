@@ -1,12 +1,16 @@
 @layer reset, base, layout, components;
-/* @import url('./components/qAndACard/qAndACard.css'); */
+
 :root {
-	--font-color: #a259f7;
+	--smooth-purple: #a259f7;
+	--black: black;
+	--white: white;
+	--navy: navy;
+	--fresh-pink: #ff5fa2;
 }
 
 ::highlight(search-results) {
-	background-color: color-mix(in srgb, var(--font-color), white 85%);
-	color: var(--font-color);
+	background-color: color-mix(in srgb, var(--smooth-purple), white 85%);
+	color: var(--smooth-purple);
 }
 
 @layer reset {
@@ -90,7 +94,7 @@
 	h2 {
 		margin-block-end: 0.7rem;
 		font-size: 1.5rem;
-		color: var(--font-color);
+		color: var(--smooth-purple);
 	}
 
 	details {
@@ -103,74 +107,23 @@
 
 	p {
 		margin-block: 0.7rem;
-		color: #252525;
 	}
 
 	button {
 		font-size: 1.1rem;
 		cursor: pointer;
 		padding: 0.5em 1em;
-		background-color: var(--font-color);
+		background-color: var(--smooth-purple);
 		color: white;
-		border: 4px solid color-mix(in srgb, var(--font-color), black 20%);
+		border: 4px solid color-mix(in srgb, var(--smooth-purple), black 20%);
 		border-radius: 15px;
 
 		&:hover {
-			background-color: color-mix(in srgb, var(--font-color), black 20%);
+			background-color: color-mix(in srgb, var(--smooth-purple), black 20%);
 		}
 
 		&:focus-visible {
 			outline: none;
-		}
-	}
-
-	article {
-		p:nth-child(1) {
-			&::first-letter {
-				initial-letter: 3;
-			}
-		}
-		p:nth-child(2) {
-			&::first-letter {
-				initial-letter: 3 1;
-			}
-		}
-		p:nth-child(3) {
-			&::first-letter {
-				initial-letter: 3 2;
-			}
-		}
-		p:nth-child(4) {
-			&::first-letter {
-				initial-letter: 3 4;
-			}
-		}
-	}
-
-	.popover {
-		visibility: hidden;
-		width: 90%;
-		max-width: 478px;
-		padding: 1em;
-		display: flex;
-
-		flex-direction: column;
-		align-self: center;
-		align-items: center;
-		justify-self: center;
-		background-color: color-mix(in srgb, var(--font-color), white 40%);
-		border: 4px solid color-mix(in srgb, var(--font-color), black 20%);
-		border-radius: 15px;
-		color: #fff;
-		opacity: 0;
-		transform: scale(0.8);
-
-		&:popover-open {
-			visibility: visible;
-			opacity: 1;
-			transform: scale(1);
-
-			transition: opacity 0.1s ease-out, transform 0.1s ease-out;
 		}
 	}
 }
@@ -216,87 +169,79 @@
 	}
 }
 
-@scope (.fresh) {
-	:scope {
-		--font-color: navy;
-		--theme-color: #ff5fa2;
-		background-color: var(--theme-color);
-		color: var(--font-color);
-	}
+.popover {
+	visibility: hidden;
+	width: 90%;
+	max-width: 478px;
+	padding: 1em;
+	display: flex;
 
-	p {
-		background-color: var(--theme-color);
-		color: var(--font-color);
-	}
-}
+	flex-direction: column;
+	align-self: center;
+	align-items: center;
+	justify-self: center;
+	background-color: color-mix(in srgb, var(--smooth-purple), white 40%);
+	border: 4px solid color-mix(in srgb, var(--smooth-purple), black 20%);
+	border-radius: 15px;
+	color: #fff;
+	opacity: 0;
+	transform: scale(0.8);
 
-@scope (.dark) {
-	:scope {
-		--font-color: #fff;
-		--theme-color: black;
-		background-color: var(--theme-color);
-		color: var(--font-color);
-	}
+	&:popover-open {
+		visibility: visible;
+		opacity: 1;
+		transform: scale(1);
 
-	p {
-		background-color: var(--theme-color);
-		color: var(--font-color);
-	}
-}
-
-@scope (.q-and-a-card) {
-	:scope {
-		--radius: 8px;
-		border: 3px solid;
-		border-radius: var(--radius);
-		padding: 1em;
-	}
-
-	p {
-		font-size: 1.3rem;
-	}
-
-	img {
-		max-width: 500px;
-		border: 6px solid;
-		padding: 1.2em;
-		background-color: white;
-		margin-block-start: 1em;
-	}
-
-	.question {
-		font-weight: bold;
-	}
-
-	.answer {
-		font-size: 1.1rem;
-		font-style: italic;
+		transition: opacity 0.1s ease-out, transform 0.1s ease-out;
 	}
 }
 
-@scope (figure) {
-	:scope {
-		margin-block: 1em;
-		padding: 1em;
-		border: 3px dashed;
-		border-radius: 8px;
-		display: inline-block;
+.letter {
+	p:nth-child(1) {
+		&::first-letter {
+			initial-letter: 3;
+		}
 	}
-
-	img {
-		max-width: 500px;
+	p:nth-child(2) {
+		&::first-letter {
+			initial-letter: 3 1;
+		}
 	}
-
-	figcaption {
-		text-align: center;
-
-		margin-block-start: 0.5em;
-		font-style: italic;
+	p:nth-child(3) {
+		&::first-letter {
+			initial-letter: 3 2;
+		}
+	}
+	p:nth-child(4) {
+		&::first-letter {
+			initial-letter: 3 4;
+		}
 	}
 }
 
-/* .q-and-a-card {
-	p {
-		color: red;
+.dark {
+	background-color: var(--black);
+	color: var(--white);
+
+	a {
+		color: var(--white);
 	}
-} */
+}
+
+.light {
+	background-color: var(--white);
+	color: var(--black);
+
+	a {
+		color: var(--black);
+	}
+}
+
+.fresh {
+	background-color: var(--fresh-pink);
+	color: var(--navy);
+
+	a {
+		color: var(--navy);
+	}
+}

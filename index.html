@@ -45,15 +45,16 @@
 							<h2>TLDR;</h2>
 						</summary>
 						<ul>
-							<li>@scope</li>
 							<li>Popover API</li>
 							<li>Inert attribute</li>
 							<li>Initial letter</li>
 							<li>Custom text highlight</li>
+							<li>CSS @scope</li>
 						</ul>
 					</details>
 				</section>
 				<topic-section topic-title="Popover API" can-i-use-href="https://caniuse.com/?search=popover">
+					<button>Show the dialog</button>
 					<p>
 						A popover is a small overlay that appears on top of the main content, typically used to display additional
 						information or options related to a specific element on the page. The Popover API provides a way to create
@@ -90,7 +91,7 @@
 					</ul>
 				</topic-section>
 				<topic-section topic-title="Initial letter" can-i-use-href="https://caniuse.com/css-initial-letter">
-					<article>
+					<article class="letter">
 						<p>
 							Let me tell you, <em>Office Space</em>&mdash;very, very tremendous movie, folks. I&rsquo;ve seen a lot of
 							movies about business, about the workplace, but nothing quite like this. Peter Gibbons, great guy, so
@@ -167,29 +168,77 @@
 					</ul>
 				</topic-section>
 				<topic-section topic-title="CSS @scope" can-i-use-href="https://caniuse.com/css-cascade-scope">
-					<div class="q-and-a-card">
-						<p class="question">Is this the way?</p>
-						<p class="answer">
-							Well, that depends on what 'this' is and which way you're going. But generally speaking, the Mandalorian
-							has it figured out...
-							<img src="/this_is_the_way.jpg" alt="This is the way" />
+					<article class="dark">
+						<h3>The Lord of the Rings: The Two Towers – Movie Recap</h1>
+						<p>
+							The story continues with the broken Fellowship pursuing separate paths to confront an escalating war in
+							Middle-earth. Frodo and Sam journey towards Mordor to destroy the One Ring, but struggle to find their way
+							through treacherous terrain. Along the way, they are stalked by Gollum, the ring’s corrupted former owner,
+							who becomes their unlikely guide despite Sam’s deep mistrust.
 						</p>
-					</div>
-					<br />
-					<div class="q-and-a-card dark">
-						<p class="question">Is this it?</p>
-						<p class="answer">No, there will be more!</p>
-					</div>
-					<br />
-					<div class="q-and-a-card fresh">
-						<p class="question">How do I properly wash my hands?</p>
-						<p class="answer">
-							<figure>
-								<img src="/this_is_the_way_comic.jpg" alt="This is the way we wash our hands" />
-								<figcaption>A poor joke</figcaption>
-							</figure>
+						<p>
+							Meanwhile, Aragorn, Legolas, and Gimli track the orcs that have captured Merry and Pippin. The two hobbits
+							escape their captors and encounter Treebeard, a giant Ent, who eventually rallies his ancient kind to
+							fight against Saruman, the corrupted wizard building an army at Isengard. These separate quests illustrate
+							the growing threat as Saruman and Sauron’s forces prepare to conquer Middle-earth.
 						</p>
-					</div>
+						<p>
+							The film climaxes at the Battle of Helm’s Deep, where Aragorn and his allies defend the kingdom of Rohan
+							against Saruman’s massive army. Although nearly overwhelmed, they are saved by Gandalf’s timely return and
+							a charge of Rohirrim horsemen. As the war intensifies and alliances are forged, Frodo and Sam move ever
+							closer to Mordor, trusting Gollum even as the dangers and temptations of the Ring increase.
+						</p>
+						<p class="light">Get all the meta data about the movie at <a href="https://www.imdb.com/title/tt016726">IMDB</a></p>
+					</article>
+					<br />
+					<article class="light">
+						<h3>The Lord of the Rings: The Fellowship of the Ring – Movie Recap</h1>
+						<p>
+							In the first installment of the Lord of the Rings trilogy, a dark power stirs in Middle-earth as the Dark
+							Lord Sauron seeks to reclaim the One Ring, a source of immense evil. The Ring unexpectedly falls into the
+							care of Frodo Baggins, a young hobbit from the Shire, after his uncle Bilbo leaves it behind. The wizard
+							Gandalf urges Frodo to take the Ring far from home, as Sauron's servants are already searching for it.
+						</p>
+						<p>
+							Frodo sets out from the Shire with his close friends Sam, Merry, and Pippin. After a dangerous journey,
+							they unite with Aragorn, a mysterious ranger, and eventually reach Rivendell, where representatives of
+							free peoples gather. There, they form the Fellowship of the Ring—Frodo, his friends, Gandalf, Aragorn,
+							Legolas the elf, Gimli the dwarf, and Boromir of Gondor—with the goal of destroying the Ring in the fires
+							of Mount Doom.
+						</p>
+						<p>
+							As they journey south, the Fellowship faces perilous obstacles: enemy attacks, the betrayal of Boromir,
+							and the loss of Gandalf in the mines of Moria. The Fellowship is ultimately broken and its members
+							scattered, but Frodo continues the quest alongside Sam. Determined to finish the task and save
+							Middle-earth, they set out alone towards Mordor, aware of the dangerous path that lies ahead.
+						</p>
+						<p class="dark">Get all the meta data about the movie at <a href="https://www.imdb.com/title/tt0120737">IMDB</a></p>
+					</article>
+					<br />
+					
+					<article class="fresh">
+						<h3>The Lord of the Rings: The Return of the King – Movie Recap</h1>
+						<p>
+							The final chapter of the trilogy opens as Sauron's forces prepare for their ultimate assault on the lands
+							of men. Frodo and Sam, guided by Gollum, continue their hazardous trek toward Mount Doom, the only place
+							where the One Ring can be destroyed. Their journey is complicated by Gollum's treachery, and the
+							overwhelming burden the Ring places on Frodo, testing the friends’ loyalty and resolve.
+						</p>
+						<p>
+							Meanwhile, Aragorn steps into his destiny as the true king of Gondor. Together with Gandalf, Legolas,
+							Gimli, and the armies of Rohan and Gondor, he leads a desperate defense against Sauron's immense armies at
+							the city of Minas Tirith. Facing incredible odds, the forces of good fight bravely in the Battle of the
+							Pelennor Fields, demonstrating hope and courage in the darkest hour.
+						</p>
+						<p>
+							As Sauron's gaze is drawn away by Aragorn's decoy attack at the Black Gate, Frodo and Sam reach Mount
+							Doom. In a final struggle with Gollum, the Ring is at last destroyed, sparking Sauron's defeat and the
+							collapse of his armies. Peace returns to Middle-earth, the king is crowned, and the surviving members of
+							the Fellowship return home. Frodo, forever changed, departs for the Undying Lands alongside Gandalf,
+							Bilbo, and the elves, bringing the epic journey to a poignant close.
+						</p>
+						<p>Get all the meta data about the movie at <a href="https://www.imdb.com/title/tt0167260">IMDB</a></p>
+					</article>
 					<p class="question">This paragraph also has the question class</p>
 					<ul slot="topic-references">
 						<li>
