@@ -41,8 +41,8 @@ if (isPopoverSuported()) {
  ********************/
 const SEARCH_HIGHLIGHT_NAME = 'search-results';
 const searchInput = document.getElementById('search-input');
-const searchContentParagraph = document.getElementById('search-content').firstChild;
-const searchableContent = searchContentParagraph.textContent;
+const searchContentParagraphTextNode = document.getElementById('search-content').firstChild;
+const searchableContent = searchContentParagraphTextNode.textContent;
 
 if (searchInput) {
 	searchInput.addEventListener('input', (event) => {
@@ -56,12 +56,15 @@ function highlightText(search) {
 	if (search && search.trim().length > 0) {
 		const searchRegex = new RegExp(search, 'gi');
 
-		const searchHitIndexes = [...searchableContent.matchAll(searchRegex)].map((a) => a.index);
+		const searchHits = [...searchableContent.matchAll(searchRegex)];
+		console.log('### searchHits ###', searchHits);
+
+		const searchHitIndexes = searchHits.map((s) => s.index);
 
 		searchHitIndexes.forEach((matchIndex) => {
 			const searchRange = new Range();
-			searchRange.setStart(searchContentParagraph, matchIndex);
-			searchRange.setEnd(searchContentParagraph, matchIndex + search.length);
+			searchRange.setStart(searchContentParagraphTextNode, matchIndex);
+			searchRange.setEnd(searchContentParagraphTextNode, matchIndex + search.length);
 
 			ranges.push(searchRange);
 		});
@@ -69,6 +72,5 @@ function highlightText(search) {
 		console.log('### ranges ###', ranges);
 	}
 	const searchHighlight = new Highlight(...ranges);
-	// Set the CSS highlight
 	CSS.highlights.set(SEARCH_HIGHLIGHT_NAME, searchHighlight);
 }
